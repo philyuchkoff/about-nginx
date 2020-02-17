@@ -22,7 +22,7 @@
 На наших продуктивных web-фронтах настроено так:
 
     limit_req_zone $binary_remote_addr zone=one:10m rate=30r/s;
-      limit_req_status            403;
+    limit_req_status            403;
 
 ### Здесь:
 - Ключ `$binary_remote_addr` — это бинарное представление IP адреса, с которого поступает запрос. Бинарное потому, что оно занимает меньше места чем строковое.
