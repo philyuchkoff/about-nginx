@@ -15,8 +15,8 @@
     usedns = no
     backend = pyinotify
     filter = nginx-req-limit
-    action = iptables-ipset-proto4[name=fuckers, port="http,https"]
-    logpath = /var/log/nginx/error.log
+    action = iptables-ipset-proto4[name=badguys, port="http,https"]
+    logpath = /var/log/nginx/access.log
     findtime = 60
     bantime = 600
     maxretry = 10
@@ -29,5 +29,5 @@
 - `findtime` -  время в секундах, в течение которого учитывается `maxretry`;
 - `bantime` - время, на которое будет блокироваться IP-адрес;
 
-В нашей конфигурации если в течении одной минуты (60) будет найдено 11 строк (10), содержащих критерии фильтра, fail2ban создаст в iptables правило с именем fuckers и заблокирует доступ для IP-адреса, с которого идет подключение, на 10 минут (600) на порты http и https.
+В нашей конфигурации если в течении одной минуты (60) будет найдено 11 строк (10), содержащих критерии фильтра, fail2ban создаст в iptables правило с именем badguys и заблокирует доступ для IP-адреса, с которого идет подключение, на 10 минут (600) на порты http и https.
 
