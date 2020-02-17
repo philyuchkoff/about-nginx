@@ -1,7 +1,7 @@
 ## Настройка fail2ban для добавления "плохих клиентов" в ipset для бана на определенное время
 ### Базовая настройка
 
-В `/etc/fail2ban/filter.d/nginx-req-limit.conf` создан фильтр:
+В `/etc/fail2ban/filter.d/nginx-req-limit.conf` создаем фильтр:
 
     [Definition]
     failregex = limiting requests, excess:.* by zone.*client: <HOST>
